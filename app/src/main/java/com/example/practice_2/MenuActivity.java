@@ -15,16 +15,19 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         RelativeLayout relativeLayout = new RelativeLayout(this);
         relativeLayout.setBackgroundColor(Color.parseColor("#FFF0F5"));
 
         TextView welcomeText = new TextView(this);
         String userName = getIntent().getStringExtra("USER_NAME");
-        welcomeText.setText("Привет, " + (userName == null ? "Гость" : userName) + "!");
         welcomeText.setTextSize(24);
         int textId = TextView.generateViewId();
         welcomeText.setId(textId);
+
+        User user = (User) getIntent().getSerializableExtra("USER_OBJECT");
+        String nickname = (user != null) ? user.getName() : "Guest";
+        welcomeText.setText(getString(R.string.welcome, nickname));
+
 
         RelativeLayout.LayoutParams textParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -45,7 +48,7 @@ public class MenuActivity extends AppCompatActivity {
         gridLayout.setLayoutParams(gridParams);
 
         Button btnNew = new Button(this);
-        btnNew.setText("Новая эмоция");
+        btnNew.setText(R.string.btn_new_emotion);
         btnNew.setBackgroundColor(Color.parseColor("#F48FB1"));
         btnNew.setTextColor(Color.WHITE);
         GridLayout.LayoutParams params1 = new GridLayout.LayoutParams();
@@ -53,13 +56,13 @@ public class MenuActivity extends AppCompatActivity {
         btnNew.setLayoutParams(params1);
         btnNew.setOnClickListener(v -> {
             Intent intent = new Intent(this, EmotionActivity.class);
-            intent.putExtra("USER_NAME", userName);
+            intent.putExtra("USER_OBJECT", user);
             startActivity(intent);
         });
         gridLayout.addView(btnNew);
 
         Button btnGuide = new Button(this);
-        btnGuide.setText("Справочник");
+        btnGuide.setText(R.string.btn_guide);
         btnGuide.setBackgroundColor(Color.parseColor("#F48FB1"));
         btnGuide.setTextColor(Color.WHITE);
         btnGuide.setOnClickListener(v -> startActivity(new Intent(this, GuideActivity.class)));

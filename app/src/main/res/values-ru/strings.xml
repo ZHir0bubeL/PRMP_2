@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Дневник Эмоций</string>
+    <string name="btn_start">Перейти в приложение</string>
+    <string name="login_title">Вход в дневник</string>
+    <string name="hint_email">Введите почту</string>
+    <string name="hint_name">Как к вам обращаться?</string>
+    <string name="hint_pass">Пароль</string>
+    <string name="btn_login">Войти</string>
+    <string name="welcome">Привет, %1$s!</string>
+    <string name="btn_new_emotion">Новая эмоция</string>
+    <string name="btn_guide">Справочник</string>
+    <string name="save_state">Сохранить состояние</string>
+    <string name="back">Назад</string>
+    <string name="hint_emotion_desc">Опишите, что чувствуете...</string>
+    <string name="emotion_happy">Счастье</string>
+    <string name="emotion_anger">Гнев</string>
+    <string name="emotion_sad">Грусть</string>
+    <string name="guide_header">СПРАВОЧНИК ЭМОЦИЙ</string>
+</resources>

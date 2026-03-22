@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Practice_2</string>
+    <string name="app_name">Emotion Tracker</string>
+    <string name="btn_start">Enter App</string>
+    <string name="login_title">Login to Diary</string>
+    <string name="hint_email">Enter email</string>
+    <string name="hint_name">Your nickname</string>
+    <string name="hint_pass">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="welcome">Hello, %1$s!</string>
+    <string name="btn_new_emotion">New Emotion</string>
+    <string name="btn_guide">Guide</string>
+    <string name="save_state">Save State</string>
+    <string name="back">Back</string>
+    <string name="hint_emotion_desc">Describe how you feel...</string>
+    <string name="emotion_happy">Happiness</string>
+    <string name="emotion_anger">Anger</string>
+    <string name="emotion_sad">Sadness</string>
+    <string name="guide_header">EMOTION GUIDE</string>
 </resources>

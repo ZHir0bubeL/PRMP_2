@@ -24,23 +24,23 @@ public class LoginActivity extends AppCompatActivity {
         linearLayout.setPadding(60, 0, 60, 0);
 
         TextView title = new TextView(this);
-        title.setText("Вход в дневник");
+        title.setText(R.string.login_title);
         title.setTextSize(28);
         title.setGravity(Gravity.CENTER);
         title.setPadding(0, 0, 0, 60);
 
         EditText emailInput = new EditText(this);
-        emailInput.setHint("Введите почту");
+        emailInput.setHint(R.string.hint_email);
 
         EditText nameInput = new EditText(this);
-        nameInput.setHint("Как к вам обращаться?");
+        nameInput.setHint(R.string.hint_name);
 
         EditText passwordInput = new EditText(this);
-        passwordInput.setHint("Пароль");
+        passwordInput.setHint(R.string.hint_pass);
         passwordInput.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
 
         Button loginButton = new Button(this);
-        loginButton.setText("Войти");
+        loginButton.setText(R.string.btn_login);
         loginButton.setElevation(0);
         loginButton.setBackgroundColor(Color.parseColor("#F48FB1"));
         loginButton.setTextColor(Color.WHITE);
@@ -59,13 +59,15 @@ public class LoginActivity extends AppCompatActivity {
         linearLayout.addView(loginButton);
 
         loginButton.setOnClickListener(v -> {
-            String userName = nameInput.getText().toString();
+            String name = nameInput.getText().toString();
+            String email = emailInput.getText().toString();
+
+            User user = new User(name, email);
 
             Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
-            intent.putExtra("USER_NAME", userName);
+            intent.putExtra("USER_OBJECT", user);
             startActivity(intent);
         });
-
         setContentView(linearLayout);
     }
 }

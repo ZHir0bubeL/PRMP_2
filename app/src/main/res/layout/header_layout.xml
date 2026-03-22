@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:background="#F48FB1"
-    android:text="СПРАВОЧНИК"
+    android:text="@string/guide_header"
     android:gravity="center"
     android:textColor="#FFFFFF"
     android:textSize="24sp" />

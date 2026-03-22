@@ -19,8 +19,9 @@ public class MainActivity extends AppCompatActivity {
         frameLayout.setBackgroundResource(R.drawable.background);
 
         Button startButton = new Button(this);
-        startButton.setText("Перейти в приложение");
+        startButton.setText(R.string.btn_start);
         startButton.setTextSize(20);
+        startButton.setText(R.string.btn_start);
         startButton.setPadding(80, 40, 80, 40);
         startButton.setElevation(0);
         startButton.setBackgroundColor(android.graphics.Color.parseColor("#FAFAFA"));
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         startButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
 

@@ -9,8 +9,8 @@
     <include layout="@layout/header_layout" />
 
     <TableRow android:paddingTop="20dp">
-        <TextView android:text="Счастье" android:textSize="22sp"/>
-        <TextView android:text="Гнев" android:textSize="22sp"/>
+        <TextView android:text="@string/emotion_happy" android:textSize="22sp"/>
+        <TextView android:text="@string/emotion_anger" android:textSize="22sp"/>
     </TableRow>
 
     <TableRow android:paddingTop="10dp">
@@ -19,7 +19,7 @@
     </TableRow>
 
     <TableRow android:paddingTop="20dp">
-        <TextView android:text="Грусть" android:textSize="22sp"/>
+        <TextView android:text="@string/emotion_sad" android:textSize="22sp"/>
     </TableRow>
     <TableRow>
         <ImageView android:src="@drawable/sad" android:layout_width="100dp" android:layout_height="100dp"/>
@@ -29,7 +29,7 @@
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Назад"
+            android:text="@string/back"
             android:backgroundTint="#F48FB1"
             android:textColor="#FFFFFF"/>
     </TableRow>

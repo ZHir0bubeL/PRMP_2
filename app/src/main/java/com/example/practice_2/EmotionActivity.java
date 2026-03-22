@@ -15,6 +15,7 @@ public class EmotionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         ScrollView scrollView = new ScrollView(this);
 
         RelativeLayout relativeLayout = new RelativeLayout(this);
@@ -27,6 +28,9 @@ public class EmotionActivity extends AppCompatActivity {
         int nameTextId = TextView.generateViewId();
         nameText.setId(nameTextId);
 
+        User user = (User) getIntent().getSerializableExtra("USER_OBJECT");
+        nameText.setText("Email: " + (user != null ? user.getEmail() : "---"));
+
         RelativeLayout.LayoutParams nameParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         nameParams.setMargins(50, 80, 50, 0);
@@ -34,7 +38,8 @@ public class EmotionActivity extends AppCompatActivity {
         relativeLayout.addView(nameText);
 
         EditText emotionInput = new EditText(this);
-        emotionInput.setHint("Опишите, что чувствуете...");
+
+        emotionInput.setHint(R.string.hint_emotion_desc);
         int emotionInputId = EditText.generateViewId();
         emotionInput.setId(emotionInputId);
 
@@ -46,7 +51,7 @@ public class EmotionActivity extends AppCompatActivity {
         relativeLayout.addView(emotionInput);
 
         Button saveBtn = new Button(this);
-        saveBtn.setText("Сохранить состояние");
+        saveBtn.setText(R.string.save_state);
         saveBtn.setBackgroundColor(Color.parseColor("#F48FB1"));
         saveBtn.setTextColor(Color.WHITE);
 
